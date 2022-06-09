@@ -9,22 +9,22 @@ public class AddressBook {
     static Scanner sc = new Scanner(System.in);
 
     public static void addContact() {
-        System.out.println(" Enter your first name : ");
-        String firstName = sc.nextLine();
-        System.out.println(" Enter your last name : ");
-        String lastName = sc.nextLine();
-        System.out.println(" Enter your city name : ");
-        String city = sc.nextLine();
-        System.out.println("Enter your state  : ");
-        String state = sc.nextLine();
-        System.out.println(" Enter your zip code : ");
+        System.out.println("Enter your first name");
+        String firstName = sc.next();
+        System.out.println("Enter your last name");
+        String lastName = sc.next();
+        System.out.println("Enter your city name");
+        String city = sc.next();
+        System.out.println("Enter your state");
+        String state = sc.next();
+        System.out.println("Enter your zip code");
         long zip = sc.nextLong();
-        System.out.println(" Enter your phone number : ");
+        System.out.println("Enter your phone number");
         long phoneNumber = sc.nextLong();
-        System.out.println(" Enter your email : ");
-        String email = sc.nextLine();
+        System.out.println("Enter your email");
+        String email = sc.next();
 
-        ContactPerson addressBook = new ContactPerson(firstName, lastName, email, city, state, phoneNumber, zip);
+        ContactPerson addressBook = new ContactPerson(firstName, lastName, city, state, zip, phoneNumber, email);
         contactList.add(addressBook);
     }
 
