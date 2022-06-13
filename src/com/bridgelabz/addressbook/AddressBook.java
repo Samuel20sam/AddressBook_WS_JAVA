@@ -11,8 +11,9 @@ public class AddressBook {
     public void setUpInfo() {
         Scanner in = new Scanner(System.in);
         System.out.println("How many contacts you want to create");
-        int count = in.nextInt();
-        for (int i = 1; i <= count; i++) {
+        int numberOfContacts = in.nextInt();
+
+        for (int i = 1; i <= numberOfContacts; i++) {
             System.out.println("Enter the First Name:");
             String firstname = in.next();
             System.out.println("Enter the Last Name:");
@@ -38,7 +39,8 @@ public class AddressBook {
     public void displayListItems() {
         for (ContactInfo data : contactList) {
             System.out.println
-                    ("First Name: " +data.getFirstName() + " " + "Last Name: " +data.getLastName() + "  "
+                    ("The contact's index is: "+contactList.indexOf(data) +" --- "
+                    +"First Name: " +data.getFirstName() + " " + "Last Name: " +data.getLastName() + "  "
                     +"Address: "+ data.getAddress() + "  " +"City: "+ data.getCity() + "  "
                     +"State: "+ data.getState() + "  " +"Zip: "+ data.getZip() + "  "
                     +"Phone No: "+ data.getPhoneNumber() + "  " +"Email ID: "+ data.getEmail());
@@ -51,9 +53,13 @@ public class AddressBook {
         for (ContactInfo data : contactList) {
             if (data.getFirstName().contains(newName)) {
                 int index = contactList.indexOf(data);
-                System.out.println(data.getFirstName() + "  " + data.getLastName() + "  "
-                        + data.getAddress() + "  " + data.getCity() + "  " + data.getState()
-                        + "  " + data.getZip() + "  " + data.getPhoneNumber() + "  " + data.getEmail());
+
+                System.out.println
+                        ("The contact's index is: "+contactList.indexOf(data) +" --- "
+                                +"First Name: " +data.getFirstName() + " " + "Last Name: " +data.getLastName() + "  "
+                                +"Address: "+ data.getAddress() + "  " +"City: "+ data.getCity() + "  "
+                                +"State: "+ data.getState() + "  " +"Zip: "+ data.getZip() + "  "
+                                +"Phone No: "+ data.getPhoneNumber() + "  " +"Email ID: "+ data.getEmail());
 
                 System.out.println("Enter the First Name:");
                 String firstname = in.next();
