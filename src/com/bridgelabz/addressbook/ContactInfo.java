@@ -1,15 +1,17 @@
 package com.bridgelabz.addressbook;
 
-public class ContactPerson {
-    private String firstName, lastName, city, state, email;
+public class ContactInfo {
+    private String firstName, lastName, address, city, state, email;
     private long phoneNumber, zip;
 
-    ContactPerson(String firstName, String lastName, String city, String state, long zip, long phoneNumber, String email)
+    ContactInfo(String firstName, String lastName, String city, String state, String address,
+                long zip, long phoneNumber, String email)
     {
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
         this.state = state;
+        this.address = address;
         this.zip = zip;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -29,6 +31,13 @@ public class ContactPerson {
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
+    }
+    public String getAddress()
+    {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
     }
     public String getCity()
     {
@@ -69,18 +78,5 @@ public class ContactPerson {
     public void setEmail(String email)
     {
         this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return "ContactPerson{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber=" + phoneNumber + '\'' +
-                ", zip=" + zip +
-                '}';
     }
 }
