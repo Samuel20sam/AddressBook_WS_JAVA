@@ -38,9 +38,10 @@ public class AddressBook {
     public void displayListItems() {
         for (ContactInfo data : contactList) {
             System.out.println
-                    (data.getFirstName() + "  " + data.getLastName() + "  "
-                    + data.getAddress() + "  " + data.getCity() + "  " + data.getState() + "  "
-                    + data.getZip() + "  " + data.getPhoneNumber() + "  " + data.getEmail());
+                    ("First Name: " +data.getFirstName() + " " + "Last Name: " +data.getLastName() + "  "
+                    +"Address: "+ data.getAddress() + "  " +"City: "+ data.getCity() + "  "
+                    +"State: "+ data.getState() + "  " +"Zip: "+ data.getZip() + "  "
+                    +"Phone No: "+ data.getPhoneNumber() + "  " +"Email ID: "+ data.getEmail());
         }
     }
 
@@ -75,5 +76,11 @@ public class AddressBook {
                 displayListItems();
             }
         }
+    }
+    public void deleteContact() {
+        System.out.println("Enter the first name of the contact to be deleted");
+        String Name = in.next();
+        contactList.removeIf(data -> data.getFirstName().contains(Name));
+        displayListItems();
     }
 }

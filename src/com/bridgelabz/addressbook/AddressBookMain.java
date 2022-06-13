@@ -17,6 +17,7 @@ public class AddressBookMain {
         System.out.println("""
                 Press 1 to continue adding a new contact
                 Press 2 to edit an existing contact
+                Press 3 to delete an existing contact
                 Press 0 to exit the address book program""");
         Scanner in = new Scanner(System.in);
         int operation = in.nextInt();
@@ -24,8 +25,11 @@ public class AddressBookMain {
             contact.setUpInfo();
             contact.displayListItems();
         } else if (operation == 2) {
-            System.out.println("You have chosen to edit the contact");
+            System.out.println("You have chosen to edit a contact");
             contact.editContact();
+        } else if (operation==3) {
+            System.out.println("You have chosen to delete a contact");
+            contact.deleteContact();
         } else if (operation == 0) {
             System.out.println("You have chosen to exit the program");
             System.exit(0);
